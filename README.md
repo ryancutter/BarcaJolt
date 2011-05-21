@@ -13,18 +13,18 @@ Usage
 
 API available at http://ryancutter.webfactional.com/barcajolt/. Here's some sample code (host, username, and password aren't real): 
 
-BarcaJolt barca = new BarcaJolt("barcatime.cloudant.com", "platseenetheheyetheryoun", "pkDrmwOaqVgKlcY3wGPWfssV");
+BarcaJolt barca = new BarcaJolt("barcatime.cloudant.com", "platseenetheheyetheryoun", "pkDrmwOaqVgKlcY3wGPWfssV");<p>
     	
-JSONObject finalsObject = barca.get("/bigdatabase/_design/zapit/_view/finals");
+JSONObject finalsObject = barca.get("/bigdatabase/_design/zapit/_view/finals");<p>
 
-int totalRows = BarcaJolt.getTotalRows(finalsObject);
-int offset = BarcaJolt.getOffset(finalsObject);
-JSONArray finalsArray = BarcaJolt.getRows(finalsObject);
+int totalRows = BarcaJolt.getTotalRows(finalsObject);<br>
+int offset = BarcaJolt.getOffset(finalsObject);<br>
+JSONArray finalsArray = BarcaJolt.getRows(finalsObject);<br>
 
-for(int i = 0; i < finalsArray.length(); i ++) {
-&nbsp;&nbsp;JSONObject finals = BarcaJolt.getValueFromArray(finalsArray, i);
-&nbsp;&nbsp;String date = finals.getString("Date").substring(0, 10);
-&nbsp;&nbsp;String symbol = BarcaJolt.getKeyFromArray(finalsArray, i);
+for(int i = 0; i < finalsArray.length(); i ++) {<br>
+&nbsp;&nbsp;JSONObject finals = BarcaJolt.getValueFromArray(finalsArray, i);<br>
+&nbsp;&nbsp;String date = finals.getString("Date").substring(0, 10);<br>
+&nbsp;&nbsp;String symbol = BarcaJolt.getKeyFromArray(finalsArray, i);<br>
 
 Policy
 ======
