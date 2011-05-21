@@ -14,7 +14,8 @@ Usage
 API available at http://ryancutter.webfactional.com/barcajolt/. Here's some sample code (host, username, and password aren't real): 
 
 BarcaJolt barca = new BarcaJolt("barcatime.cloudant.com", "platseenetheheyetheryoun", "pkDrmwOaqVgKlcY3wGPWfssV");<p>
-    	
+
+// run finals view<br>    	
 JSONObject finalsObject = barca.get("/bigdatabase/_design/zapit/_view/finals");<p>
 
 int totalRows = BarcaJolt.getTotalRows(finalsObject);<br>
@@ -29,12 +30,12 @@ for(int i = 0; i < finalsArray.length(); i ++) {<br>
 Policy
 ======
 
-MIT/BSD license - no restrictions.
+Use it however you'd like in accordance with MIT/BSD.
 
 TODO
 ====
 
-Bunches. This version contains a very partial implementation of Cloudant's API. I'd like to include all of the Search API (http://support.cloudant.com/kb/search/search-api) and perhaps support write operations as well. I'm open to all suggesstions. 
+Bunches. This version contains a very partial implementation of Cloudant's API. I'd like to include all of the Search API (http://support.cloudant.com/kb/search/search-api) and perhaps support write operations as well. I'm open to suggesstions. 
 
 Author
 ======
