@@ -11,18 +11,20 @@ JAR available in Downloads section. Also feel free to rip source code in accorda
 Usage
 =====
 
-Not complicated. Add your HOST, PORT, PROTOCOL, USERNAME, PASSWORD parameters. Everything else is static:
+API available at http://ryancutter.webfactional.com/barcajolt/. Here's some sample code (host, username, and password aren't real): 
 
-JSONObject jObject = BarcaJolt.get("/bigdatabase/_design/frenzy/_view/finals");
+BarcaJolt barca = new BarcaJolt("barcatime.cloudant.com", "platseenetheheyetheryoun", "pkDrmwOaqVgKlcY3wGPWfssV");
+    	
+JSONObject finalsObject = barca.get("/bigdatabase/_design/zapit/_view/finals");
 
-int totalRows = BarcaJolt.getTotalRows(jObject);<br>
-int offset = BarcaJolt.getOffset(jObject);<br>
-JSONArray rowArray = BarcaJolt.getRows(jObject);<p>
-        
-for(int i = 0; i < rowArray.length(); i++) {<br>
-&nbsp;&nbsp;JSONObject valueArray = BarcaJolt.getValueFromArray(rowArray, i);<br>
-&nbsp;&nbsp;String key = BarcaJolt.getKeyFromArray(rowArray, i);<br>
-&nbsp;&nbsp;String id = BarcaJolt.getIdFromArray(rowArray, i);<br>
+int totalRows = BarcaJolt.getTotalRows(finalsObject);
+int offset = BarcaJolt.getOffset(finalsObject);
+JSONArray finalsArray = BarcaJolt.getRows(finalsObject);
+
+for(int i = 0; i < finalsArray.length(); i ++) {
+&nbsp;&nbsp;JSONObject finals = BarcaJolt.getValueFromArray(finalsArray, i);
+&nbsp;&nbsp;String date = finals.getString("Date").substring(0, 10);
+&nbsp;&nbsp;String symbol = BarcaJolt.getKeyFromArray(finalsArray, i);
 
 Policy
 ======
